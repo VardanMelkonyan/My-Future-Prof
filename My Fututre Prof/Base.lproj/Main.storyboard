@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Saa-K7-YC6">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,136 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="My_Fututre_Prof" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="PFc-dm-8RT">
+                                <rect key="frame" x="62.5" y="104" width="250" height="59.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Your Fingerprint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4d-0L-chV">
+                                        <rect key="frame" x="23" y="0.0" width="204" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3tO-op-sc9">
+                                        <rect key="frame" x="0.0" y="49.5" width="250" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="EFt-85-yYi"/>
+                                            <constraint firstAttribute="width" constant="250" id="v4t-fi-wRu"/>
+                                        </constraints>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxi-4h-veH">
+                                <rect key="frame" x="147.5" y="493.5" width="80" height="80"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="0ha-eh-itH"/>
+                                    <constraint firstAttribute="height" constant="80" id="yL2-Og-qHB"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="fingerprint"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sd5-Ss-6oU" appends="YES" id="2H1-ty-dgt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Fxi-4h-veH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="200" id="Pfz-9m-jhO"/>
+                            <constraint firstItem="Fxi-4h-veH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hFy-rN-9hW"/>
+                            <constraint firstItem="PFc-dm-8RT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-200" id="hSn-OJ-7xt"/>
+                            <constraint firstItem="PFc-dm-8RT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r9V-HL-SAH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LFo-Qe-t1L"/>
+                    <connections>
+                        <outlet property="longOutlet" destination="Fxi-4h-veH" id="jfM-N4-lb3"/>
+                        <outlet property="progressLabel" destination="K4d-0L-chV" id="tDZ-Z0-c2c"/>
+                        <outlet property="progressView" destination="3tO-op-sc9" id="prl-56-D1F"/>
+                        <segue destination="MCR-LC-Cuc" kind="show" identifier="toResult" id="qcS-ZC-hkF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="sd5-Ss-6oU">
+                    <connections>
+                        <action selector="longPress:" destination="BYZ-38-t0r" id="ns5-hQ-nU6"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1061.5999999999999" y="148.87556221889056"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="FDf-Ia-7o8">
+            <objects>
+                <viewController id="MCR-LC-Cuc" customClass="ResultViewController" customModule="My_Fututre_Prof" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oWJ-f1-ZKV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ITg-v5-dmm">
+                                <rect key="frame" x="37.5" y="109" width="300" height="449"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are going to be a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewf-ec-rSY">
+                                        <rect key="frame" x="42.5" y="0.0" width="215" height="29"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ԲՈՄԺ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wk-UI-jnp">
+                                        <rect key="frame" x="73" y="61" width="154" height="56"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="48"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="бомж-png-7" translatesAutoresizingMaskIntoConstraints="NO" id="XGE-Tv-5xT">
+                                        <rect key="frame" x="0.0" y="149" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="NMr-pt-JJ2"/>
+                                            <constraint firstAttribute="height" constant="300" id="TiW-Jj-DEe"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ITg-v5-dmm" firstAttribute="centerY" secondItem="oWJ-f1-ZKV" secondAttribute="centerY" id="7YE-qZ-WRd"/>
+                            <constraint firstItem="ITg-v5-dmm" firstAttribute="centerX" secondItem="oWJ-f1-ZKV" secondAttribute="centerX" id="nvX-N8-hSN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Rz-r1-bAd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dsq-VG-cAE"/>
+                    <connections>
+                        <outlet property="resultImage" destination="XGE-Tv-5xT" id="rxU-nh-8qa"/>
+                        <outlet property="resultLabel" destination="9Wk-UI-jnp" id="Wjl-l4-My1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BDV-gt-Xgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1912.8" y="147.97601199400302"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SlL-CF-lO6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Saa-K7-YC6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q15-cP-pMe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eKn-4S-10B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0N-FV-MBQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122.40000000000001" y="148.87556221889056"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fingerprint" width="170.5" height="170.5"/>
+        <image name="бомж-png-7" width="233" height="233"/>
+    </resources>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2AF17923F5466400BF809E /* ProfManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2AF17823F5466400BF809E /* ProfManager.swift */; };
+		CA2AF17D23F54BC200BF809E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2AF17C23F54BC200BF809E /* ResultViewController.swift */; };
 		CA90096723F1283800325060 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90096623F1283800325060 /* AppDelegate.swift */; };
 		CA90096923F1283800325060 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90096823F1283800325060 /* SceneDelegate.swift */; };
 		CA90096B23F1283800325060 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA90096A23F1283800325060 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA2AF17823F5466400BF809E /* ProfManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfManager.swift; sourceTree = "<group>"; };
+		CA2AF17C23F54BC200BF809E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		CA90096323F1283800325060 /* My Fututre Prof.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Fututre Prof.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA90096623F1283800325060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA90096823F1283800325060 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA2AF18023F5758E00BF809E /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CA90096A23F1283800325060 /* ViewController.swift */,
+				CA2AF17C23F54BC200BF809E /* ResultViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		CA2AF18123F577EB00BF809E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA2AF17823F5466400BF809E /* ProfManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CA90095A23F1283800325060 = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +79,8 @@
 			children = (
 				CA90096623F1283800325060 /* AppDelegate.swift */,
 				CA90096823F1283800325060 /* SceneDelegate.swift */,
-				CA90096A23F1283800325060 /* ViewController.swift */,
+				CA2AF18123F577EB00BF809E /* Model */,
+				CA2AF18023F5758E00BF809E /* VC */,
 				CA90096C23F1283800325060 /* Main.storyboard */,
 				CA90096F23F1283B00325060 /* Assets.xcassets */,
 				CA90097123F1283B00325060 /* LaunchScreen.storyboard */,
@@ -138,8 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2AF17D23F54BC200BF809E /* ResultViewController.swift in Sources */,
 				CA90096B23F1283800325060 /* ViewController.swift in Sources */,
 				CA90096723F1283800325060 /* AppDelegate.swift in Sources */,
+				CA2AF17923F5466400BF809E /* ProfManager.swift in Sources */,
 				CA90096923F1283800325060 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6J67PTCV9;
 				INFOPLIST_FILE = "My Fututre Prof/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6J67PTCV9;
 				INFOPLIST_FILE = "My Fututre Prof/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
